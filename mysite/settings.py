@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["calorieapp-gygsawg6g8auhnac.eastasia-01.azurewebsites.net"]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://calorieapp-gygsawg6g8auhnac.eastasia-01.azurewebsites.net",
+]
+
 
 # Application definition
 
