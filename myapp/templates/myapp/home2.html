@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>My first three.js app</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #041204;
+            color: white;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #041204;
+            color: white;
+            position: fixed;
+            width: 97%;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .hero, .section, .features-container, .footer {
+            padding: 50px;
+            text-align: center;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding-top: 60px; /* Offset for navbar */
+            background-color: #041204;
+        }
+        .hero-text {
+            flex: 1;
+            padding: 20px;
+        }
+        .hero-model {
+            flex: 1;
+            position: relative;
+            height: 100%;
+        }
+        .hero-model canvas {
+            display: block;
+            width: 604px;
+            height: 249px;
+        }
+        .btn {
+            background-color: #1e7e34;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        .btn a{
+            color: white;
+            text-decoration: none;
+        }
+        .section {
+            background-color: #f4f4f4;
+            color: black;
+        }
+        .features-container {
+            display: flex;
+            justify-content: space-around;
+            background-color: #f4f4f4;
+            color: black;
+        }
+        .features-container .section {
+            flex: 1;
+            margin: 10px;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            background-color: #021402;
+            color: white;
+        }
+        .footer .links {
+            display: flex;
+            justify-content: space-around;
+            text-align: left;
+        }
+        .footer .links div {
+            margin: 10px;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.167.1/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.167.1/examples/jsm/"
+          }
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <h1>NutriCal</h1>
+        </div>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+    <div id="home" class="hero">
+        <div class="hero-text">
+            <h1>Discover the Power of Macro Nutrient and</h1>
+            <p>Take Control of Your Nutrition with Our Powerful Tracker</p>
+            <button class="btn"><a href="{% url 'index' %}">Optimize Your Diet and Achieve</a></button>
+        </div>
+        <div class="hero-model">
+            <script type="module" src="{% static 'myapp/js/main.js' %}"></script>
+        </div>
+    </div>
+
+    <div id="features" class="features-container">
+        <div id="features1" class="section">
+            <h2>Unlock Your Fitness</h2>
+            <p>Our intuitive macro nutrient and calorie tracker empowers you to take control of your health and fitness goals.</p>
+            <p>With advanced features and personalized recommendations, you can seamlessly optimize your diet, boost your energy levels</p>
+            <p>Maximize Your Nutritional Intake</p>
+        </div>
+        <div id="features2" class="section">
+            <h2>Nourish Your Wellness</h2>
+            <p>Discover the perfect balance of macro nutrients and calories to fuel your active lifestyle.</p>
+            <p>Our cutting-edge tracker provides precise insights.</p>
+        </div>
+        <div id="features3" class="section">
+            <h2>Unlock the Secrets of Optimal Nutrition</h2>
+            <p>Harness the power of our comprehensive macro nutrient and calorie tracker to revolutionize your health and fitness journey.</p>
+        </div>
+    </div>
+
+    <div id="features4" class="section">
+        <h2>Discover the Perfect Balance of Macros and Calories</h2>
+        <p>Unlock the Key to Optimal Nutrition</p>
+        <button class="btn">Join Now</button>
+    </div>
+
+    <div id="contact" class="footer">
+        <div class="links">
+            <div>
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a><br>
+                <a href="#about">About</a><br>
+                <a href="#products">Products</a><br>
+                <a href="#contact">Contact</a>
+            </div>
+            <div>
+                <h3>Explore Our Services</h3>
+                <a href="#macro">Macro Tracking</a><br>
+                <a href="#calorie">Calorie Monitoring</a><br>
+                <a href="#plans">Personalized Plans</a><br>
+                <a href="#support">Support</a>
+            </div>
+            <div>
+                <h3>Connect With Us</h3>
+                <a href="https://instagram.com">Instagram</a><br>
+                <a href="https://facebook.com">Facebook</a><br>
+                <a href="https://twitter.com">Twitter</a><br>
+                <a href="https://linkedin.com">LinkedIn</a>
+            </div>
+        </div>
+        <p>&copy; 2024 NutriCal, Inc. All rights reserved.</p>
+    </div>
+</body>
+</html>

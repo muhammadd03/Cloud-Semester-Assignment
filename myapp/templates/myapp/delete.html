@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Delete Confirmation</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #041204;
+            color: white;
+            position: fixed;
+            width: 98%;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .container {
+            margin-top: 80px;
+            padding: 20px;
+            text-align: center;
+        }
+        .btn {
+            background-color: #1e7e34;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <h1>NutriCal</h1>
+        </div>
+        <div>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'home' %}">Features</a>
+            <a href="{% url 'home' %}">Contact</a>
+        </div>
+    </nav>
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            <h2>Are you sure you want to delete the item?</h2>
+            <input class="btn" type="submit" value="Confirm">
+        </form>
+    </div>
+</body>
+</html>
